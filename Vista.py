@@ -1,5 +1,5 @@
-
-
+import time
+import os
 
 class Vista:
     def __init__(self):
@@ -13,8 +13,9 @@ class Vista:
         print("[1] Ingresar Perro nuevo")
         print("[2] Consultar Datos de Perro")
         print("[3] Eliminar Perro de La BD")
+        print("[4] Salir Del Programa")
         print("----------------------------------")
-        return input("Ingrese una opcion valida por favor")
+        return input("Ingrese una opcion valida por favor\n->")
 
     def pedir_nombre_perro(self):
         return input("Ingrese el nombre de su Perro:\n->")
@@ -33,7 +34,29 @@ class Vista:
 
     def pedir_tamaño_perro(self):
         return input("Ingrese el Tamaño del Perro\n->")
+
+    def consultar_si_desea_ingresar_otro_perro(self):
+        return input("Desea ingresar otro Perro?\n->[S/N]")
+        
     
+    def manejo_de_errores(self):
+        self.limpiar_pantalla()
+        self.dato_invalido()
+        self.mostrar_mensaje_continuar()
+
+    def limpiar_pantalla(self):
+        time.sleep(0.5)
+        os.system("cls")
+    
+    def dato_invalido(self):
+        print("Error, dato ingresado no válido ❌.")
+
+    def mostrar_mensaje_continuar(self):
+        return input("Presiona enter para continuar ✅")
+
+    def gracias_por_utilizar_nuestro_programa(self):
+        print("Gracias Por Utilizar nuestro Programa")
+
     def mostrar_lista_perros(self,lista):
         print(self.lista)
     

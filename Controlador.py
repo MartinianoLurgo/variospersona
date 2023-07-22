@@ -6,33 +6,38 @@ from Vista import Vista
 class Controlador:
     def __init__(self):
         self.Perro = Perro(nombre='',edad='',color='',raza='',sexo='',tamaño='')
-        self.Vista = Vista
+        self.Vista = Vista()
         self.listaperros = []
 
 
     def cargar_archivo(self):
         with open("archivo.txt","r") as file:
             for linea in file.readlines():
-                linea = linea.strip().split(";")
+                linea = linea.strip().split(",")
                 perro = Perro(linea[0],linea[1],linea[2],linea[3],linea[4],linea[5])
                 self.listaperros.append(perro)
 
-    def guardar_archivo(self,perro):
-        with open("archivo.txt","w",encoding="utf-8")as file:
-            for perro in self.listaperros:
-                perros = []
+    def guardar_archivo(self):
+        with open("archivo.txt","a",encoding="utf-8")as file:
+                file.write(str(self.Perro.get_nombre())+","+(str(self.Perro.get_edad()))+","+(str(self.Perro.get_color()))+","+(str(self.Perro.get_raza()))+","+(str(self.Perro.get_sexo()))+","+(str(self.Perro.get_tamaño()))+'\n')
 
 
 
     def ejecutar_menu(self):
-        opcion = self.Vista.menu()
-        if opcion == 1:
-            self.ingresar_datos_perro()
-        if opcion == 2:
-            self.consultar_datos_perro()
-        if opcion == 3:
-            self.eliminar_perro()
-
+        opcion = 0
+        while opcion != "4":
+            try:
+                opcion = self.Vista.menu()
+                if opcion == "1":
+                    self.ingresar_datos_perro()
+                if opcion == "2":
+                    self.consultar_datos_perro()
+                if opcion == "3":
+                    self.eliminar_perro()
+            except ValueError:
+                self.Vista.manejo_de_errores()
+                self.ejecutar_menu()
+        self.Vista.gracias_por_utilizar_nuestro_programa()
 
     def ingresar_datos_perro(self):
         nombre = self.Vista.pedir_nombre_perro()
@@ -41,8 +46,17 @@ class Controlador:
         raza = self.Vista.pedir_raza_perro()
         sexo = self.Vista.pedir_sexo_perro()
         tamaño = self.Vista.pedir_tamaño_perro()
+        self.Perro.set_nombre(nombre)
+        self.Perro.set_edad(edad)
+        self.Perro.set_color(color)
+        self.Perro.set_raza(raza)
+        self.Perro.set_sexo(sexo)
+        self.Perro.set_tamaño(tamaño)
         Perro(nombre,edad,color,raza,sexo,tamaño)
-        self.cargar_archivo()
+        self.guardar_archivo()
+        aux = self.Vista.consultar_si_desea_ingresar_otro_perro()
+        if aux == "S":
+            self.ingresar_datos_perro()
+        if aux == "N":
+            self.ejecutar_menu()
 
-    def consultar_datos_perro(self):
-        with open

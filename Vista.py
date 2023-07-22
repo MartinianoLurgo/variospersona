@@ -57,9 +57,8 @@ class Vista:
     def gracias_por_utilizar_nuestro_programa(self):
         print("Gracias Por Utilizar nuestro Programa")
 
-    def mostrar_lista_perros(self,lista):
-        print(self.lista)
+    def perro_No_encontrado(self):
+        print("El Perro no se encuentra en la Base de Datos")
     
-
-    def mostrar_datos_perro(self,datos):
-        print(self.datos)
+    def mostrar_datos_perro(self,perro):
+        print("Los Datos Del Perro Son {}".format(perro))

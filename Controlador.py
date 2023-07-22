@@ -11,11 +11,11 @@ class Controlador:
 
 
     def cargar_archivo(self):
-        with open("archivo.txt","r") as file:
+        with open("archivo.txt","r",encoding="utf-8") as file:
             for linea in file.readlines():
                 linea = linea.strip().split(",")
-                perro = Perro(linea[0],linea[1],linea[2],linea[3],linea[4],linea[5])
-                self.listaperros.append(perro)
+                self.Perro = Perro(linea[0],linea[1],linea[2],linea[3],linea[4],linea[5])
+                self.listaperros.append(self.Perro)
 
     def guardar_archivo(self):
         with open("archivo.txt","a",encoding="utf-8")as file:
@@ -32,6 +32,7 @@ class Controlador:
                     self.ingresar_datos_perro()
                 if opcion == "2":
                     self.consultar_datos_perro()
+                    break
                 if opcion == "3":
                     self.eliminar_perro()
             except ValueError:
@@ -60,3 +61,16 @@ class Controlador:
         if aux == "N":
             self.ejecutar_menu()
 
+
+    def consultar_datos_perro(self):
+        encontrado = False
+        nombre_perro = self.Vista.pedir_nombre_perro()
+        self.cargar_archivo()
+        for Perro in self.listaperros:
+            if Perro.get_nombre() == nombre_perro:
+                self.Vista.mostrar_datos_perro((self.Perro.get_nombre(),self.Perro.get_edad(),self.Perro.get_color(),self.Perro.get_raza(),self.Perro.get_sexo(),self.Perro.get_tamaño()))
+                encontrado = True
+                break
+            elif encontrado == False:
+                self.Vista.perro_No_encontrado()
+        self.ejecutar_menu()

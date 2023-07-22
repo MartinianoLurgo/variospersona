@@ -1,0 +1,2 @@
+Pretta,2,Negro,Galgo,Fememnino,Grande
+Juan,3,Amarrillo,Golden,Masculino,Grande

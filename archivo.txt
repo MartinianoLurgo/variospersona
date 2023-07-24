@@ -1,2 +1,3 @@
 Pretta,2,Negro,Galgo,Fememnino,Grande
 Juan,3,Amarrillo,Golden,Masculino,Grande
+juan,2,nero,galgo,f,g

@@ -1,0 +1,3 @@
+
+Firulais,4,Marron,Galgo,Masculino,Grande
+Pretta,3,Negro,Galgo,Femenino,Mediano

@@ -13,7 +13,8 @@ class Vista:
         print("[1] Ingresar Perro nuevo")
         print("[2] Consultar Datos de Perro")
         print("[3] Eliminar Perro de La BD")
-        print("[4] Salir Del Programa")
+        print("[4] Mostrar Lista Perros")
+        print("[5] Salir Del Programa")
         print("----------------------------------")
         return input("Ingrese una opcion valida por favor\n->")
 
@@ -60,5 +61,8 @@ class Vista:
     def perro_No_encontrado(self):
         print("El Perro no se encuentra en la Base de Datos")
     
-    def mostrar_datos_perro(self,perro):
-        print("Los Datos Del Perro Son {}".format(perro))
+    def mostrar_datos_perro(self,nombre,edad,color,raza,sexo,tamaño):
+        print("Los Datos Del Perro Son \n->Nombre: {}\n->Edad: {}\n->Color: {}\n->Raza: {}\n->Sexo: {}\n->Tamaño: {}".format(nombre,edad,color,raza,sexo,tamaño))
+    
+    def mostrar_lista_perros(self,listaperros):
+        print("La lista de Perros es la siguiente:\n{}".format(listaperros))

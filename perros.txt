@@ -1,5 +1,1 @@
-,,,,,
-Pretta,4,negro,galgo,femenino,grande
-Firulais,2,marron,perro,masculino,grande
-Pretta,3,Negro,Galgo,Femenino,Grande
-Firulais,4,Marron,golden,masculino,mediano
+Firulais,5,Marron,Mastif,Masculino,Grande

@@ -64,5 +64,21 @@ class Vista:
     def mostrar_datos_perro(self,nombre,edad,color,raza,sexo,tamaño):
         print("Los Datos Del Perro Son \n->Nombre: {}\n->Edad: {}\n->Color: {}\n->Raza: {}\n->Sexo: {}\n->Tamaño: {}".format(nombre,edad,color,raza,sexo,tamaño))
     
-    def mostrar_lista_perros(self,listaperros):
-        print("La lista de Perros es la siguiente:\n{}".format(listaperros))
+    def mostrar_lista_perros(self,lista_perros):
+        print("La lista de Perros es la siguiente:\n")
+        for perro in lista_perros:
+            print("Nombre:", perro["Nombre"])
+            print("Edad:", perro["Edad"])
+            print("Color:", perro["Color"])
+            print("Raza:", perro["Raza"])
+            print("Sexo:", perro["Sexo"])
+            print("Tamaño:", perro["Tamaño"])
+            print()
+
+    def pedir_nombre_perro_buscado(self):
+        return input("Ingrese el nombre de su Perro:\n->")
+    
+
+    def No_hay_perros_en_la_lista(self):
+        print("No hay perros en la lista.")
+        

@@ -1,1 +1,2 @@
-Firulais,5,Marron,Mastif,Masculino,Grande
+Peluche,9,Gris con Negro,Callejero,Femenino,Pequeño
+Pretta,4,Negro,Galgo,Femenino,Grande
